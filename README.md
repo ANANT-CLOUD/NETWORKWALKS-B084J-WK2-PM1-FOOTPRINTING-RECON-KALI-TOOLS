@@ -164,7 +164,7 @@ wafw00f networkwalks.com
 dnsrecon -d networkwalks.com
 ```
 
-![dnsrecon output](task6-dnsrecon.png.png)
+![dnsrecon output](ask6-dnsrecon.png.png)
 
 **Key findings:**
 
