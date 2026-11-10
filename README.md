@@ -168,12 +168,15 @@ dnsrecon -d networkwalks.com
 
 **Key findings:**
 
-- [Fill in from your corrected run: SOA and NS records]
-- [Fill in: MX (mail server) record]
-- [Fill in: A record and IP address]
-- [Fill in: SPF / TXT records]
-- [Fill in: SRV records, if any]
-- [Fill in: DNS software version, if exposed]
+- SOA record: `ns6135.hostgator.com` (50.87.144.87)
+- Name servers (NS): `ns6135.hostgator.com` (50.87.144.87) and `ns6136.hostgator.com` (192.232.216.131)
+- DNS software version exposed: Bind `9.16.23-RH` on both name servers
+- Mail server (MX): `mail.networkwalks.com` (192.232.216.135)
+- A record: `networkwalks.com` resolves to 192.232.216.135
+- SPF record: `v=spf1 +a +mx +ip4:50.87.144.87 +include:websitewelcome.com ~all`
+- TXT record: Google site verification
+- 8 SRV records for `_autodiscover._tcp` pointing to `cpanelemaildiscovery.cpanel.net` on port 443 (cPanel email autodiscovery)
+- No answer to the DNSSEC query, which matches the `DNSSEC: unsigned` result from whois
 
 **How attackers use this:** dnsrecon maps the target's entire DNS footprint: mail servers, DNS software version, SPF policy and service records. Each record is a potential foothold and helps an attacker understand the email and hosting setup.
 
