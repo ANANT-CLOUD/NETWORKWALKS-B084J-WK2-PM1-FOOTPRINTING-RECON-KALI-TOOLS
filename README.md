@@ -46,3 +46,24 @@ It can be used for activities such as:
 
 All commands were run from a terminal in Kali Linux. The screenshot and text output of each command were saved for the final report.
 
+## Step 1. Domain Registration Lookup (whois)
+
+`whois` queries the public domain registration record to find who owns the domain, when it was registered, and its name servers.
+
+**Tool:** whois
+
+```
+whois networkwalks.com
+```
+
+![whois output](screenshots/task1-whois.png)
+
+**Key findings:**
+
+- Registrar: GoDaddy.com, LLC
+- Creation date: 2019-11-06
+- Registry expiry date: 2027-11-06
+- Name servers: `NS6135.HOSTGATOR.COM`, `NS6136.HOSTGATOR.COM`
+- DNSSEC: unsigned
+
+**How attackers use this:** The name servers point to HostGator, so an attacker instantly learns the hosting provider. Registration dates and abuse contacts help with social engineering and planning.
