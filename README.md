@@ -164,7 +164,7 @@ wafw00f networkwalks.com
 dnsrecon -d networkwalks.com
 ```
 
-![dnsrecon output](ask6-dnsrecon.png.png)
+![dnsrecon output](task6-dnsrecon.png.png)
 
 **Key findings:**
 
@@ -205,31 +205,6 @@ WAF:               ModSecurity (SpiderLabs)
 Exposed endpoint:  /wp-json/ (WordPress REST API)
 Exposed email:     info@networkwalks.com
 ```
-
-# 🐞 Problems Encountered & Solutions
-
-Documenting problems is an important part of the project.
-
-## Problem 1. dnsrecon: "unrecognized arguments"
-
-The first attempt to run dnsrecon failed:
-
-```
-dnsrecon networkwalks.com
-dnsrecon: error: unrecognized arguments: networkwalks.com
-```
-
-![dnsrecon error](screenshots/task6-dnsrecon-error.png)
-
-**Cause:** dnsrecon requires the target domain to be passed with the `-d` option. The domain cannot be given as a bare argument.
-
-The issue was resolved by running:
-
-```
-dnsrecon -d networkwalks.com
-```
-
-> **Important:** When a tool prints its usage text, read the option list. Each tool has its own syntax, so always check `tool --help` first.
 
 # What I Learned
 
